@@ -1,8 +1,11 @@
 package com.github.theprogmatheus.mc.mcore.core;
 
+import lombok.Data;
+
 import java.io.File;
 import java.util.logging.Logger;
 
+@Data
 public class MCore {
 
     private final Logger log;
