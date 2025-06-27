@@ -17,6 +17,8 @@ dependencies {
     implementation("org.mongodb:mongodb-driver-sync:5.5.1")
     implementation("dev.morphia.morphia:morphia-core:2.5.0")
     implementation("redis.clients:jedis:6.0.0")
+    compileOnly("org.projectlombok:lombok:1.18.38")
+    annotationProcessor("org.projectlombok:lombok:1.18.38")
 }
 
 tasks.test {
