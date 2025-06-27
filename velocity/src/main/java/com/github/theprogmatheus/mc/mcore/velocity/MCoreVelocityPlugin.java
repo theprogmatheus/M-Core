@@ -1,10 +1,15 @@
 package com.github.theprogmatheus.mc.mcore.velocity;
 
 import com.github.theprogmatheus.mc.mcore.core.MCore;
+import com.google.inject.Inject;
 import com.velocitypowered.api.event.Subscribe;
 import com.velocitypowered.api.event.proxy.ProxyInitializeEvent;
 import com.velocitypowered.api.event.proxy.ProxyShutdownEvent;
 import com.velocitypowered.api.plugin.Plugin;
+import com.velocitypowered.api.plugin.annotation.DataDirectory;
+
+import java.nio.file.Path;
+import java.util.logging.Logger;
 
 @Plugin(
         id = "mcore",
@@ -18,8 +23,9 @@ public class MCoreVelocityPlugin {
 
     private final MCore mcore;
 
-    public MCoreVelocityPlugin() {
-        this.mcore = new MCore();
+    @Inject
+    public MCoreVelocityPlugin(Logger log, @DataDirectory Path dataDirectory) {
+        this.mcore = new MCore(log, dataDirectory.toFile());
         this.mcore.onLoad();
     }
 
