@@ -1,17 +1,10 @@
 plugins {
     id("java")
+    id("com.gradleup.shadow")
 }
 
 group = "com.github.theprogmatheus"
 version = "1.0-SNAPSHOT"
-
-repositories {
-    mavenCentral()
-    maven {
-        name = "papermc"
-        url = uri("https://repo.papermc.io/repository/maven-public/")
-    }
-}
 
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
@@ -21,4 +14,16 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.shadowJar {
+    archiveBaseName.set("mcore-paper")
+    archiveClassifier.set("")
+    archiveVersion.set(project.version.toString())
+
+    dependsOn(":core:jar")
+}
+
+tasks.build {
+    dependsOn(tasks.shadowJar)
 }
