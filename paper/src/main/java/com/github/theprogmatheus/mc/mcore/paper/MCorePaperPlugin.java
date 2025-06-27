@@ -8,7 +8,7 @@ public class MCorePaperPlugin extends JavaPlugin {
     private final MCore mcore;
 
     public MCorePaperPlugin() {
-        this.mcore = new MCore();
+        this.mcore = new MCore(getLogger(), getDataFolder());
     }
 
     @Override
