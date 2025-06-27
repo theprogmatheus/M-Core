@@ -8,6 +8,8 @@ import java.util.logging.Logger;
 @Data
 public class MCore {
 
+    private static MCore instance;
+
     private final Logger log;
     private final File dataFolder;
     private final ServicesManager servicesManager;
@@ -30,4 +32,26 @@ public class MCore {
         this.log.info("M-Core disabled.");
     }
 
+    /**
+     * Instala uma instância MCore para usar.
+     *
+     * @param mcore - A instância a ser instalada.
+     * @return a instância instalada.
+     */
+    public static MCore setup(MCore mcore) {
+        if (instance != null)
+            throw new IllegalStateException("MCore instance has already been installed, use MCore.get() to use it");
+        return get();
+    }
+
+    /**
+     * Resgata a instância MCore instalada anteriormente.
+     *
+     * @return a instância instalada.
+     */
+    public static MCore get() {
+        if (instance == null)
+            throw new IllegalStateException("MCore instance has not yet been installed, use MCore.setup() to install");
+        return instance;
+    }
 }
