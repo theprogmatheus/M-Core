@@ -18,8 +18,8 @@ tasks.test {
 }
 
 tasks.shadowJar {
-    archiveBaseName.set("mcore-paper")
-    archiveClassifier.set("")
+    archiveBaseName.set("mcore-plugin")
+    archiveClassifier.set("paper")
     archiveVersion.set(project.version.toString())
 
     dependsOn(":core:jar")
