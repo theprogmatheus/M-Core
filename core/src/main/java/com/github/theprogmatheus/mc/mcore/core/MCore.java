@@ -7,10 +7,12 @@ public class MCore {
 
     private final Logger log;
     private final File dataFolder;
+    private final ServicesManager servicesManager;
 
     public MCore(Logger log, File dataFolder) {
         this.log = log;
         this.dataFolder = dataFolder;
+        this.servicesManager = new ServicesManager();
     }
 
     public void onLoad() {
