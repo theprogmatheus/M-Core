@@ -48,4 +48,14 @@ public class ServicesManager {
         return null;
     }
 
+    /**
+     * Verifica se já existe um serviço registrado na classe chave.
+     *
+     * @param serviceClass - Classe chave do serviço que deve ser verificado.
+     * @return true se já existe um serviço registrado com essa chave.
+     */
+    public boolean hasService(Class<?> serviceClass) {
+        return services.containsKey(serviceClass);
+    }
+
 }
