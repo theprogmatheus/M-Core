@@ -25,7 +25,7 @@ public class MCoreVelocityPlugin {
 
     @Inject
     public MCoreVelocityPlugin(Logger log, @DataDirectory Path dataDirectory) {
-        this.mcore = new MCore(log, dataDirectory.toFile());
+        this.mcore = MCore.setup(new MCore(log, dataDirectory.toFile()));
         this.mcore.onLoad();
     }
 
