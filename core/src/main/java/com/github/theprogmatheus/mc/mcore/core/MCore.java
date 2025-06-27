@@ -41,7 +41,7 @@ public class MCore {
     public static MCore setup(MCore mcore) {
         if (instance != null)
             throw new IllegalStateException("MCore instance has already been installed, use MCore.get() to use it");
-        return get();
+        return instance = mcore;
     }
 
     /**
