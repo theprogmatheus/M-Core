@@ -23,6 +23,10 @@ tasks.shadowJar {
     archiveVersion.set(project.version.toString())
 
     dependsOn(":core:jar")
+
+
+    // Ignorar arquivos  de META-INF
+    exclude("META-INF/**")
 }
 
 tasks.build {

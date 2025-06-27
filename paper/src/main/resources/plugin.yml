@@ -4,3 +4,4 @@ version: "1.0-SNAPSHOT"
 website: "https://github.com/theprogmatheus/M-Core"
 description: "M-Core is a powerful, extensible, and production-ready framework for developing high-quality Minecraft plugins with shared architecture."
 authors: [ "TheProgMatheus", "Sr_Edition" ]
+api-version: "1.21"
