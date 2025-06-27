@@ -1,7 +1,9 @@
 package com.github.theprogmatheus.mc.mcore.core;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class ServicesManager {
 
@@ -56,6 +58,15 @@ public class ServicesManager {
      */
     public boolean hasService(Class<?> serviceClass) {
         return services.containsKey(serviceClass);
+    }
+
+    /**
+     * Lista todos os serviços registrados.
+     *
+     * @return Um set dos serviços registrados.
+     */
+    public Set<Class<?>> listServices() {
+        return Collections.unmodifiableSet(services.keySet());
     }
 
 }
