@@ -1,0 +1,11 @@
+{
+  "id": "mcore",
+  "name": "M-Core",
+  "version": "1.0-SNAPSHOT",
+  "authors": [
+    "TheProgMatheus",
+    "Sr_Edition"
+  ],
+  "dependencies": [],
+  "main": "com.github.theprogmatheus.mc.mcore.velocity.MCoreVelocityPlugin"
+}
