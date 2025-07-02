@@ -23,6 +23,10 @@ dependencies {
     api("dev.morphia.morphia:morphia-core:2.5.0")
     api("redis.clients:jedis:6.0.0")
     api("org.bspfsystems:yamlconfiguration:3.0.2")
+    api("io.objectbox:objectbox-gradle-plugin:4.3.0")
+    api("io.objectbox:objectbox-linux:4.3.0")
+    api("io.objectbox:objectbox-macos:4.3.0")
+    api("io.objectbox:objectbox-windows:4.3.0")
 }
 
 tasks.test {
