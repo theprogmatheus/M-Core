@@ -17,6 +17,7 @@ tasks.test {
     useJUnitPlatform()
 }
 
+
 tasks.shadowJar {
     archiveBaseName.set("mcore-plugin")
     archiveClassifier.set("paper")
@@ -24,6 +25,8 @@ tasks.shadowJar {
 
     dependsOn(":core:jar")
 
+    mergeServiceFiles()
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
     // Ignorar arquivos  de META-INF
     exclude("META-INF/**")

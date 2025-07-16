@@ -1,3 +1,5 @@
+import com.github.jengelman.gradle.plugins.shadow.ShadowJavaPlugin.Companion.shadowJar
+
 plugins {
     id("java")
     id("com.gradleup.shadow") version "9.0.0-beta10" apply false
