@@ -13,6 +13,7 @@ subprojects {
             name = "papermc"
             url = uri("https://repo.papermc.io/repository/maven-public/")
         }
+        maven { url = uri("https://jitpack.io") }
     }
 }
 
