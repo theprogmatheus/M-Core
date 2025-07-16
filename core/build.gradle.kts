@@ -27,6 +27,8 @@ dependencies {
     api("io.objectbox:objectbox-linux:4.3.0")
     api("io.objectbox:objectbox-macos:4.3.0")
     api("io.objectbox:objectbox-windows:4.3.0")
+    api("com.github.LMS5413:inventory-api:v1.0.10")
+    api("com.google.inject:guice:7.0.0")
 }
 
 tasks.test {
