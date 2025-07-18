@@ -6,16 +6,24 @@ plugins {
 group = "com.github.theprogmatheus"
 version = "1.0-SNAPSHOT"
 
+repositories {
+    maven {
+        name = "spigot-repo"
+        url = uri("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
+    }
+}
+
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-    compileOnly("io.papermc.paper:paper-api:1.21.6-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.20.6-R0.1-SNAPSHOT")
     implementation(project(":core"))
 }
 
 tasks.test {
     useJUnitPlatform()
 }
+
 
 tasks.shadowJar {
     archiveBaseName.set("mcore-plugin")
@@ -24,6 +32,8 @@ tasks.shadowJar {
 
     dependsOn(":core:jar")
 
+    mergeServiceFiles()
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
     // Ignorar arquivos  de META-INF
     exclude("META-INF/**")
